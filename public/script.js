@@ -115,7 +115,8 @@ function displayAnswer(answersDiv, answerText) {
 }
 
 function toggleAnswers(button) {
-    const answersDiv = button.nextElementSibling;
+    const questionItem = button.parentElement.parentElement;
+    const answersDiv = questionItem.querySelector('.answers');
     const isVisible = answersDiv.style.display === 'block';
     answersDiv.style.display = isVisible ? 'none' : 'block';
     button.textContent = isVisible ? `Show Replies (${answersDiv.children.length})` : `Hide Replies (${answersDiv.children.length})`;
