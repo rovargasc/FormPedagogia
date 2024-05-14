@@ -119,7 +119,7 @@ function toggleAnswers(button) {
     const answersDiv = questionItem.querySelector('.answers');
     const isVisible = answersDiv.style.display === 'block';
     answersDiv.style.display = isVisible ? 'none' : 'block';
-    button.textContent = isVisible ? `Mostrar respuestas (${answersDiv.children.length})` : `Hide Replies (${answersDiv.children.length})`;
+    button.textContent = isVisible ? `Mostrar respuestas (${answersDiv.children.length})` : `Ocultar respuestas (${answersDiv.children.length})`;
 }
 
 function updateAnswerCount(buttonsDiv) {
