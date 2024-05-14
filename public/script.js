@@ -15,7 +15,7 @@ function loadQuestions() {
                 questionItem.innerHTML = `
                     <div class="question-text">${question.question}</div>
                     <div class="buttons">
-                        <button onclick="toggleAnswerForm(this, ${question.id})">Reply</button>
+                        <button onclick="toggleAnswerForm(this, ${question.id})">Responder</button>
                         <button onclick="toggleAnswers(this)">Show Replies (${question.answers.length})</button>
                     </div>
                     <div class="answers" style="display: none;">
@@ -59,7 +59,7 @@ function displayQuestion(questionId, questionText) {
     questionItem.innerHTML = `
         <div class="question-text">${questionText}</div>
         <div class="buttons">
-            <button onclick="toggleAnswerForm(this, ${questionId})">Reply</button>
+            <button onclick="toggleAnswerForm(this, ${questionId})">Responder</button>
             <button onclick="toggleAnswers(this)">Show Replies (0)</button>
         </div>
         <div class="answers" style="display: none;"></div>
@@ -100,7 +100,7 @@ function submitAnswer(button, questionId) {
             displayAnswer(answerInput.parentElement.parentElement, answerText);
             answerInput.value = ''; // Clear the text area after submitting
             updateAnswerCount(answerInput.parentElement.parentElement.previousElementSibling);
-            alert('Your reply has been registered');
+            alert('Tu respuesta ha sido guardada!');
         }).catch(error => {
             console.error('Error posting answer:', error);
         });
