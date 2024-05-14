@@ -16,7 +16,7 @@ function loadQuestions() {
                     <div class="question-text">${question.question}</div>
                     <div class="buttons">
                         <button onclick="toggleAnswerForm(this, ${question.id})">Responder</button>
-                        <button onclick="toggleAnswers(this)">Show Replies (${question.answers.length})</button>
+                        <button onclick="toggleAnswers(this)">Mostrar respuestas (${question.answers.length})</button>
                     </div>
                     <div class="answers" style="display: none;">
                         ${question.answers.map(answer => `
@@ -60,7 +60,7 @@ function displayQuestion(questionId, questionText) {
         <div class="question-text">${questionText}</div>
         <div class="buttons">
             <button onclick="toggleAnswerForm(this, ${questionId})">Responder</button>
-            <button onclick="toggleAnswers(this)">Show Replies (0)</button>
+            <button onclick="toggleAnswers(this)">Mostrar respuestas (0)</button>
         </div>
         <div class="answers" style="display: none;"></div>
     `;
@@ -119,12 +119,12 @@ function toggleAnswers(button) {
     const answersDiv = questionItem.querySelector('.answers');
     const isVisible = answersDiv.style.display === 'block';
     answersDiv.style.display = isVisible ? 'none' : 'block';
-    button.textContent = isVisible ? `Show Replies (${answersDiv.children.length})` : `Hide Replies (${answersDiv.children.length})`;
+    button.textContent = isVisible ? `Mostrar respuestas (${answersDiv.children.length})` : `Hide Replies (${answersDiv.children.length})`;
 }
 
 function updateAnswerCount(buttonsDiv) {
     const answersDiv = buttonsDiv.nextElementSibling;
     const answerCount = answersDiv.children.length;
     const showButton = buttonsDiv.querySelector('button:nth-child(2)');
-    showButton.textContent = `Show Replies (${answerCount})`;
+    showButton.textContent = `Mostrar respuestas (${answerCount})`;
 }
